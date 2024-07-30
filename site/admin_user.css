@@ -10,11 +10,13 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: #0078d7;
-    padding: 10px 20px;
+    height: 27px; /* 높이를 27px로 수정 */
 }
 
 .header-container .logo img {
-    height: 50px;
+    position: fixed;
+    top: 71px;
+    right: 664px;
 }
 
 .header-container nav ul {
@@ -29,6 +31,34 @@ body {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    font-family: "Noto Sans HK"; /* 폰트 설정 */
+    font-size: 14px; /* 폰트 크기 설정 */
+}
+
+.header-container nav ul li a.health-link {
+    color: #ACADB9;
+    position: absolute;
+    width: 124px;
+    height: 26px;
+    top: 147px;
+    left: 78px;
+}
+
+.header-container nav ul li a.user-link {
+    position: absolute;
+    width: 71px;
+    height: 26px;
+    top: 147px;
+    left: 231px;
+}
+
+.header-container nav ul li a.report-link {
+    color: #ACADB9;
+    position: absolute;
+    width: 71px;
+    height: 26px;
+    top: 147px;
+    left: 331px;
 }
 
 .header-container .user-menu a {
