@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CJ Health 로그인</title>
-    <link rel="stylesheet" href="login.css">
-    <script defer src="login.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <script defer src="{{ url_for('static', filename='js/login.js') }}"></script>
     <!-- Firebase SDK 추가 -->
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
@@ -29,17 +29,18 @@
     <header>
         <div class="top-bar"></div>
         <div class="header-top-links">
-            <a href="login.html">로그인</a>
-            <a href="mypage.html">마이페이지</a>
-            <a href="customer_service.html">고객센터</a>
+            <a href="{{ url_for('login') }}">로그인</a>
+            <a href="{{ url_for('mypage') }}">마이페이지</a>
+            <a href="{{ url_for('customer_service') }}">고객센터</a> 
         </div>
-        <div class="header-main">
-            <a href="work_management.html"><img src="logo.svg" alt="CJ Health 로고" class="logo"></a>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="CJ Health Logo">
         </div>
         <nav class="header-bottom-links">
-            <a href="heart_rate.html" target="_blank">심장 박동수</a>
-            <a href="work_management.html">근무 시간</a>
-            <a href="hospital_booking.html">병원 예약</a>
+            <a href="{{ url_for('heart_rate') }}" target="_blank">심장 박동수</a>
+            <a href="{{ url_for('work_management') }}">근무 시간</a>
+            <a href="{{ url_for('report') }}" target="_blank">신고 내역</a>
+            
         </nav>
     </header>
     <main>

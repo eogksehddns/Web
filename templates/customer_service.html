@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mypage.css') }}">
+</head>
+<body>
+    <header>
+        <div class="top-bar"></div>
+        <div class="header-top-links">
+            <a href="{{ url_for('login') }}">로그인</a>
+            <a href="{{ url_for('mypage') }}">마이페이지</a>
+            <a href="{{ url_for('customer_service') }}">고객센터</a>
+        </div>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="CJ Health Logo">
+        </div>
+        <nav class="header-bottom-links">
+            <a href="{{ url_for('heart_rate') }}" target="_blank">심장 박동수</a>
+            <a href="{{ url_for('work_management') }}">근무 시간</a>
+            <a href="{{ url_for('report') }}" target="_blank">신고 내역</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Customer Service</h1>
+        <p>고객센터 내용입니다.</p>
+    </main>
+</body>
+</html>

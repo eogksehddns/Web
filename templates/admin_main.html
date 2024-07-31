@@ -4,19 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>관리자 웹 메인페이지</title>
-    <link rel="stylesheet" href="admin_main.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_main.css') }}">
+</head>
 </head>
 <body>
     <header>
         <div class="header-container">
             <div class="logo">
-                <img src="logo.svg" alt="CJ Health Logo">
+                <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="CJ Health Logo">
             </div>
             <nav>
                 <ul>
-                    <li><a href="admin_main.html">근무자 건강 관리</a></li>
-                    <li><a href="admin_user.html">유저 관리</a></li>
-                    <li><a href="admin_report.html">신고 내역</a></li>
+                    <li><a href="{{ url_for('admin_main') }}">근무자 건강 관리</a></li>
+                    <li><a href="{{ url_for('admin_user') }}">유저 관리</a></li>
+                    <li><a href="{{ url_for('admin_report') }}">신고 내역</a></li>
                 </ul>
             </nav>
             <div class="user-menu">
@@ -39,7 +40,7 @@
                     <span>근로자 | 이상치 발생 날짜 및 시간 | 증상</span>
                 </div>
                 <div class="worker-detail">
-                    <a href="#">></a>
+                    <a href="#"></a>
                 </div>
             </div>
             <div class="worker">
@@ -65,6 +66,6 @@
     <footer>
         <p>고객 센터</p>
     </footer>
-    <script src="admin_main.js"></script>
+    <script src="{{ url_for('static', filename='js/admin_main.js') }}"></script>
 </body>
 </html>

@@ -4,23 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>심장 박동수</title>
-    <link rel="stylesheet" href="heart_rate.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/heart_rate.css') }}">
 </head>
 <body>
     <header>
         <div class="top-bar"></div>
         <div class="header-top-links">
-            <a href="login.html">로그인</a>
-            <a href="mypage.html">마이페이지</a>
-            <a href="customer_service.html">고객센터</a>
+            <a href="{{ url_for('login') }}">로그인</a>
+            <a href="{{ url_for('mypage') }}">마이페이지</a>
+            <a href="{{ url_for('customer_service') }}">고객센터</a>
+        </div>
         </div>
         <div class="logo">
-            <img src="logo.svg" alt="CJ Health Logo">
+            <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="CJ Health Logo">
         </div>
         <nav class="header-bottom-links">
-            <a href="heart_rate.html" target="_blank">심장 박동수</a>
-            <a href="working_hours.html">근무 시간</a>
-            <a href="report.html">신고 내역</a>
+            <a href="{{ url_for('heart_rate') }}" target="_blank">심장 박동수</a>
+            <a href="{{ url_for('work_management') }}">근무 시간</a>
+            <a href="{{ url_for('report') }}" target="_blank">신고 내역</a>
         </nav>
     </header>
     <main>
