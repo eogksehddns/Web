@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CJ Health 로그인</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
-    <script defer src="{{ url_for('static', filename='js/login.js') }}"></script>
+    
     <!-- Firebase SDK 추가 -->
-    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script>
     <script>
-        var firebaseConfig = {
+        const firebaseConfig = {
             apiKey: "AIzaSyBcqI5juIUtjHT3GcVfDIvanNQUFS5S5Jo",
             authDomain: "cj-project-da850.firebaseapp.com",
             databaseURL: "https://cj-project-da850-default-rtdb.firebaseio.com",
@@ -22,15 +21,22 @@
             appId: "1:574274568290:web:3f90f1caa04dacbd42d13b",
             measurementId: "G-WCDJM6KSMT"
         };
+
+        // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
     </script>
+
+    <script defer src="{{ url_for('static', filename='js/login.js') }}"></script>
 </head>
+
 <body>
     <header>
         <div class="top-bar"></div>
         <div class="header-top-links">
             <a href="{{ url_for('login') }}">로그인</a>
+            <span class="separator">|</span>
             <a href="{{ url_for('mypage') }}">마이페이지</a>
+            <span class="separator">|</span>
             <a href="{{ url_for('customer_service') }}">고객센터</a> 
         </div>
         <div class="logo">
@@ -40,13 +46,12 @@
             <a href="{{ url_for('heart_rate') }}" target="_blank">심장 박동수</a>
             <a href="{{ url_for('work_management') }}">근무 시간</a>
             <a href="{{ url_for('report') }}" target="_blank">신고 내역</a>
-            
         </nav>
     </header>
     <main>
         <div class="login-container">
             <div class="login-tabs">
-                <button class="active" onclick="showLoginForm('id-login')">ID 로그인</button>
+                <button onclick="showLoginForm('id-login')" class="active">ID 로그인</button>
                 <button onclick="showLoginForm('bio-login')">생체 인식 로그인</button>
             </div>
             <form id="id-login" class="login-form">

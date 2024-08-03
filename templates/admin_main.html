@@ -5,6 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>관리자 웹 메인페이지</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_main.css') }}">
+
+     <!-- Firebase SDK 추가 -->
+     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script>
+     <script>
+         const firebaseConfig = {
+             apiKey: "AIzaSyBcqI5juIUtjHT3GcVfDIvanNQUFS5S5Jo",
+             authDomain: "cj-project-da850.firebaseapp.com",
+             databaseURL: "https://cj-project-da850-default-rtdb.firebaseio.com",
+             projectId: "cj-project-da850",
+             storageBucket: "cj-project-da850.appspot.com",
+             messagingSenderId: "574274568290",
+             appId: "1:574274568290:web:3f90f1caa04dacbd42d13b",
+             measurementId: "G-WCDJM6KSMT"
+         };
+ 
+         // Initialize Firebase
+         firebase.initializeApp(firebaseConfig);
+     </script>
+
+     <script src="{{ url_for('static', filename='js/admin_main.js') }}"></script>
 </head>
 </head>
 <body>
@@ -49,7 +71,7 @@
                     <span>근로자 | 이상치 발생 날짜 및 시간 | 증상</span>
                 </div>
                 <div class="worker-detail">
-                    <a href="#">></a>
+                    <a href="#"></a>
                 </div>
             </div>
             <div class="worker">
@@ -58,7 +80,7 @@
                     <span>근로자 | 이상치 발생 날짜 및 시간 | 증상</span>
                 </div>
                 <div class="worker-detail">
-                    <a href="#">></a>
+                    <a href="#"></a>
                 </div>
             </div>
         </section>
@@ -66,6 +88,5 @@
     <footer>
         <p>고객 센터</p>
     </footer>
-    <script src="{{ url_for('static', filename='js/admin_main.js') }}"></script>
 </body>
 </html>

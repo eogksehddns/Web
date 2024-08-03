@@ -2,27 +2,43 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    width: 1440px;
+    height: 1024px;
+    background: #F7F8FA;
 }
 
 .top-bar {
-    background-color: #006ECD;
+    width: 1440px;
     height: 27px;
+    background: #006ECD;
+    flex-shrink: 0;
 }
 
 .header-top-links {
     display: flex;
     justify-content: flex-end;
-    background-color: white;
-    padding: 10px 20px;
+    align-items: center;
+    position: relative;
 }
 
 .header-top-links a {
-    color: black;
+    color: #000000; /* 글자색 변경 */
     text-decoration: none;
-    margin-left: 20px;
+    margin-left: 22px; /* 버튼 사이 간격 */
     font-size: 18px;
     font-weight: 400;
+    font-family: 'Noto Sans HK', sans-serif;
+    line-height: 26.06px;
+    text-align: left;
+    position: relative;
+}
+
+.header-top-links .separator {
+    top: 21px;
+    font-size: 18px;
+    font-family: 'Noto Sans HK', sans-serif;
+    color: black;
+    margin: 0 11px;
 }
 
 .header-main {
@@ -33,25 +49,52 @@ body {
     background-color: white;
 }
 
-header .logo {
-    height: 60px;
-    margin-right: 10px;
+.logo {
+    position: absolute;
+    left: 665px;
+    top: 81px;
+    background-color: white; /* 배경색 변경 */
+    width: 111px; /* 고정된 가로 크기 */
+    height: 39px; /* 고정된 세로 크기 */
+}
+
+header .logo img {
+    width: 100%; /* 이미지가 로고 영역에 맞게 조정 */
+    height: 100%; /* 이미지가 로고 영역에 맞게 조정 */
 }
 
 .header-bottom-links {
     display: flex;
     justify-content: flex-start;
-    background-color: white;
-    padding: 10px 20px;
-    border-bottom: 2px solid #ccc;
+    position: relative;
 }
 
 .header-bottom-links a {
-    color: black;
+    color: #000000; /* 글자색 변경 */
     text-decoration: none;
-    margin-right: 20px;
+    position: absolute;
+    font-family: 'Noto Sans HK', sans-serif;
     font-size: 24px;
     font-weight: 400;
+    line-height: 34.75px;
+    text-align: left;
+    top: 142px; /* 페이지 상단으로부터 142px */
+    opacity: 1; /* 글씨가 보이도록 변경 */
+}
+
+.header-bottom-links a:nth-child(1) { /* 심장 박동수 */
+    width: 116px;
+    left: 132px;
+}
+
+.header-bottom-links a:nth-child(2) { /* 근무 시간 */
+    width: 94px;
+    left: 292px;
+}
+
+.header-bottom-links a:nth-child(3) { /* 신고 내역 */
+    width: 94px;
+    left: 430px;
 }
 
 main {
